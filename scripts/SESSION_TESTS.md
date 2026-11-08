@@ -1,0 +1,9 @@
+# Local session-coordination regression
+
+Run `npm run test:session-coordination` with `SESSION_TEST_NODE_MODULES` pointing to an existing matching dependency installation containing Playwright and `SESSION_TEST_CHROMIUM` pointing to an existing Chromium/headless-shell executable. The test does not install dependencies or download browsers. It currently requires macOS `sandbox-exec` and a free loopback port 4099.
+
+The runner copies public source/configuration byte-for-byte into ignored `tmp-tests/`, uses actual libsql file SQLite with a fictional token, builds once and starts its own isolated Next server. No app `.env`, generated build instructions, private verifier or real database credentials are copied. Build/server processes deny outbound networking; Chromium permits only localhost:4099 and its route handler blocks all other origins. Screenshots are saved under `test/clone-images/` only. Own browser/context/server/database files are cleaned; logs and source hashes remain in the ignored evidence folder.
+
+It checks genuine React interactions and business responses: a clean missing-lock retry verifies401 without initialization, explicit confirmed reset without locks sends no reset and explains recovery; three native-lock views share one owner and one initialization; a note created via UI and its owner survive manual verification with a valid cookie and no locks; controlled cookie loss requires explicit confirmation, Cancel sends no request, and confirmed reset with native locks retains the previous note while creating an empty session. Native lock ownership is observed read-only at actual POST and authenticated-probe request boundaries before continuing the original request.
+
+These are isolated local regressions, not production/HTTPS/partition/Constructor/provider acceptance. Do not use their output as authority for deployment readiness or the complete application checklist.
