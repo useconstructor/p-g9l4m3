@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "tables": {
+    "notes": {
+      "columns": [
+        "id",
+        "session_id",
+        "titulo",
+        "texto",
+        "fijada",
+        "created_at",
+        "updated_at",
+        "revision",
+        "implementation_version"
+      ],
+      "hidden": [],
+      "pageSize": 26
+    }
+  }
+}
