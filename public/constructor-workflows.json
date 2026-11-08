@@ -4,7 +4,7 @@
     {
       "id": "info",
       "name": "Información pública",
-      "description": "Nombre y descripción de la aplicación. QA qa/platform-smoke-1794176316921",
+      "description": "Nombre y descripción de la aplicación.",
       "endpoint": "/api/info",
       "method": "GET",
       "input": {}
