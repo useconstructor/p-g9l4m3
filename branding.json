@@ -1,7 +1,15 @@
 {
-  "tone": "minimal",
+  "primaryColor": "#0f766e",
+  "secondaryColor": "#FFFFFF",
+  "backgroundColor": "#E8EDF3",
+  "textColor": "#182B45",
+  "accentColor": "#2457D6",
+  "fontHeading": "IBM Plex Sans",
   "fontBody": "IBM Plex Sans",
+  "borderRadius": "0.25rem",
   "logoText": "Notas de Bolsillo",
+  "tone": "minimal",
+  "logoImageUrl": null,
   "brandbook": {
     "motif": "Pestaña azul de selección que une físicamente el margen derecho de la fila activa con el margen izquierdo de la hoja. En teléfono, al alternar vistas, ese acento reaparece en el borde de la cabecera de la misma nota para conservar su identidad.",
     "pages": [
@@ -933,13 +941,5 @@
     "positioning": "Herramienta personal ficticia de Esteban para probar Constructor: un índice claro y una hoja de escritura, con notas privadas anónimas y confirmaciones honestas.",
     "researchStatus": "not_requested",
     "tokenSemanticsVersion": 1
-  },
-  "textColor": "#182B45",
-  "accentColor": "#2457D6",
-  "fontHeading": "IBM Plex Sans",
-  "borderRadius": "0.25rem",
-  "logoImageUrl": null,
-  "primaryColor": "#2457D6",
-  "secondaryColor": "#FFFFFF",
-  "backgroundColor": "#E8EDF3"
+  }
 }
