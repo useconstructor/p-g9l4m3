@@ -7,7 +7,9 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "test:session-coordination": "node scripts/test-session-coordination.mjs"
+    "test:session-coordination": "node scripts/test-session-coordination.mjs",
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "test:product-qa": "node scripts/test-product-qa.cjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

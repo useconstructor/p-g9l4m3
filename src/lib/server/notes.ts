@@ -41,17 +41,20 @@ export async function summary(request: Request): Promise<Response> {
 export async function list(request: Request): Promise<Response> {
   const session = await requireSession(request);
   const query = validateQuery(request, ["q"]).get("q") ?? "";
-  const pattern = `%${query.replace(/[\\%_]/g, (character) => `\\${character}`)}%`;
+  const needle = query.toLowerCase();
   const [counts, matches] = await getDatabase().batch([
     { sql: "SELECT COUNT(*) AS total FROM notes WHERE session_id = ?", args: [session.id] },
     {
       sql: `SELECT ${COLUMNS} FROM notes WHERE session_id = ?
-        AND (titulo LIKE ? ESCAPE '\\' OR texto LIKE ? ESCAPE '\\')
         ORDER BY fijada DESC, updated_at DESC, id ASC`,
-      args: [session.id, pattern, pattern],
+      args: [session.id],
     },
   ], "read");
-  return json({ total: Number(counts.rows[0].total), coincidencias: matches.rows.length, notas: matches.rows.map(publicNote) });
+  // SQLite LIKE folds ASCII only. Apply literal Unicode casing after the
+  // owner-scoped ordered snapshot, without trimming/normalizing stored text.
+  const notes = matches.rows.map(publicNote).filter(note =>
+    (note.titulo + "\n" + note.texto).toLowerCase().includes(needle));
+  return json({ total: Number(counts.rows[0].total), coincidencias: notes.length, notas: notes });
 }
 
 export async function detail(request: Request, id: string): Promise<Response> {
