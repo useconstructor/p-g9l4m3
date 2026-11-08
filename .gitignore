@@ -54,3 +54,5 @@ AGENTS.md
 .claude/
 .agents/
 skills-lock.json
+node_modules
+.next

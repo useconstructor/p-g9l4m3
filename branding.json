@@ -1,0 +1,945 @@
+{
+  "primaryColor": "#2457D6",
+  "secondaryColor": "#FFFFFF",
+  "backgroundColor": "#E8EDF3",
+  "textColor": "#182B45",
+  "accentColor": "#2457D6",
+  "fontHeading": "IBM Plex Sans",
+  "fontBody": "IBM Plex Sans",
+  "borderRadius": "0.25rem",
+  "logoText": "Notas de Bolsillo",
+  "logoImageUrl": null,
+  "tone": "minimal",
+  "brandbook": {
+    "version": 1,
+    "origin": "proposed",
+    "researchStatus": "not_requested",
+    "tokenSemanticsVersion": 1,
+    "positioning": "Herramienta personal ficticia de Esteban para probar Constructor: un índice claro y una hoja de escritura, con notas privadas anónimas y confirmaciones honestas.",
+    "voice": "Español directo, tranquilo y funcional. Acciones concretas, errores recuperables y estados inequívocos. Aviso compartido: «Una app ficticia de Esteban para probar Constructor». Sin lenguaje comercial ni promesas de recuperación imposibles.",
+    "motif": "Pestaña azul de selección que une físicamente el margen derecho de la fila activa con el margen izquierdo de la hoja. En teléfono, al alternar vistas, ese acento reaparece en el borde de la cabecera de la misma nota para conservar su identidad.",
+    "sources": [
+      "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    ],
+    "colors": [
+      {
+        "role": "background",
+        "name": "Quiet Desk",
+        "hex": "#E8EDF3"
+      },
+      {
+        "role": "surface",
+        "name": "Clear Sheet",
+        "hex": "#FFFFFF"
+      },
+      {
+        "role": "accent",
+        "name": "Selection Blue",
+        "hex": "#2457D6"
+      },
+      {
+        "role": "text",
+        "name": "Steady Ink",
+        "hex": "#182B45"
+      },
+      {
+        "role": "muted",
+        "name": "Quiet Edge",
+        "hex": "#77879D"
+      }
+    ],
+    "fontFaces": [
+      {
+        "family": "IBM Plex Sans",
+        "weight": "400",
+        "url": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6llzAA.ttf",
+        "availableWeights": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ]
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "500",
+        "url": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlzAA.ttf",
+        "availableWeights": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ]
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "600",
+        "url": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf",
+        "availableWeights": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ]
+      },
+      {
+        "family": "IBM Plex Sans",
+        "weight": "700",
+        "url": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDDV5zAA.ttf",
+        "availableWeights": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ]
+      }
+    ],
+    "markSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 160 160\"><path fill=\"#182B45\" d=\"M44 16H96L116 36V110H44Z\"/><path fill=\"#FFFFFF\" d=\"M52 24H92V40H108V102H52Z\"/><path fill=\"#2457D6\" d=\"M100 29L107 36H100Z\"/><path fill=\"#182B45\" d=\"M24 64H136V104C136 129 116 144 80 150C44 144 24 129 24 104Z\"/><path fill=\"#FFFFFF\" d=\"M32 72H128V104C128 124 111 136 80 142C49 136 32 124 32 104Z\"/><path fill=\"#2457D6\" d=\"M112 64H136V88H112Z\"/></svg>",
+    "pages": [
+      {
+        "title": "Brand guidelines",
+        "summary": "Herramienta personal ficticia de Esteban para probar Constructor: un índice claro y una hoja de escritura, con notas privadas anónimas y confirmaciones honestas.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "Un índice claro. Una hoja para escribir."
+          },
+          {
+            "title": "Project descriptor",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          }
+        ],
+        "id": "brand-page-1",
+        "layout": "cover"
+      },
+      {
+        "title": "The Brand",
+        "summary": "Use a short, left-aligned chapter heading on Selection Blue. Introduce the identity through the relationship between an index and a writing sheet, not a promotional hero.",
+        "examples": [
+          {
+            "title": "Índice y hoja",
+            "text": "Encuentra una nota y continúa escribiendo."
+          },
+          {
+            "title": "Divider composition",
+            "text": "Place the heading above one short line. Keep the remaining blue field open; omit cards, photography and decorative paper stacks."
+          }
+        ],
+        "id": "brand-page-2",
+        "layout": "divider"
+      },
+      {
+        "title": "Welcome",
+        "summary": "This guide presents an original identity proposed for this project, with examples of its visual and editorial use.",
+        "examples": [
+          {
+            "title": "Project identity",
+            "text": "Preserve Notas de Bolsillo exactly. Keep the interface in Spanish and the shared descriptor unchanged."
+          },
+          {
+            "title": "Shared descriptor",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          }
+        ],
+        "id": "brand-page-3",
+        "layout": "content"
+      },
+      {
+        "title": "Index",
+        "summary": "Organize the guide in this reading order: identity, logo, typography, color, graphic language and applications. Use a narrow index beside a wider content area.",
+        "examples": [
+          {
+            "title": "01–15 · Identity and logo",
+            "text": "Project framing, voice, pocket symbol, lockup, spacing and misuse."
+          },
+          {
+            "title": "16–29 · Visual system",
+            "text": "IBM Plex Sans, hierarchy, layouts, exact palette, selection tab, icons and image-free references."
+          },
+          {
+            "title": "30–49 · Applications",
+            "text": "Design studies for project communication, workspace controls, two app pages and supporting materials."
+          }
+        ],
+        "id": "brand-page-4",
+        "layout": "content"
+      },
+      {
+        "title": "Defining",
+        "summary": "Present Notas de Bolsillo as a personal workspace, not a landing page. The index helps selection; the sheet holds writing; the blue tab connects them.",
+        "examples": [
+          {
+            "title": "Inicio",
+            "text": "Tus notas, de un vistazo."
+          },
+          {
+            "title": "Notas",
+            "text": "Elige una nota del índice o crea una nueva."
+          }
+        ],
+        "id": "brand-page-5",
+        "layout": "content"
+      },
+      {
+        "title": "Vision & Mission",
+        "summary": "Express the brief's project intent rather than inventing a corporate mission. Favor finding, writing and explicit saving over promotional claims or promises of permanent access.",
+        "examples": [
+          {
+            "title": "Working intent",
+            "text": "Un espacio sencillo para encontrar una nota y escribir sin distracciones."
+          },
+          {
+            "title": "Scope statement",
+            "text": "Dos páginas: Inicio para el resumen y Notas para la lista y el editor."
+          }
+        ],
+        "id": "brand-page-6",
+        "layout": "content"
+      },
+      {
+        "title": "Brand Values",
+        "summary": "Treat clarity, continuity and honest feedback as proposed design principles. Show them through visible labels, preserved context and server-confirmed states, not abstract value badges.",
+        "examples": [
+          {
+            "title": "Clarity",
+            "text": "Use «Guardar nota», not «Listo». Name the action rather than implying an outcome."
+          },
+          {
+            "title": "Continuity",
+            "text": "«Volver a la lista» retains the selected note, search and scroll position in the planned mobile flow."
+          },
+          {
+            "title": "Honesty",
+            "text": "Use «Resultado incierto» when confirmation is missing. Never replace it with «Guardado» for reassurance."
+          }
+        ],
+        "id": "brand-page-7",
+        "layout": "content"
+      },
+      {
+        "title": "Tone of Voice",
+        "summary": "Write interface copy in direct, calm Spanish. Use sentence case, concrete verbs and a useful next step. Avoid sales language, blame, technical traces and exaggerated reassurance.",
+        "examples": [
+          {
+            "title": "Required title",
+            "text": "Escribe un título para guardar la nota."
+          },
+          {
+            "title": "Recoverable failure",
+            "text": "No pudimos cargar tus notas. Reintentar."
+          },
+          {
+            "title": "Lost session",
+            "text": "No podemos acceder a esta sesión. Reintenta antes de empezar una sesión vacía."
+          }
+        ],
+        "id": "brand-page-8",
+        "layout": "content"
+      },
+      {
+        "title": "Logo",
+        "summary": "Introduce the pocket-and-sheet symbol on a white field. Keep the symbol and full name as separate elements so the name always uses real typography.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "A pocket holds one upright sheet; a blue edge introduces the selection motif."
+          },
+          {
+            "title": "Section treatment",
+            "text": "Use one large symbol and one compact lockup. Do not fill the divider with repeated marks."
+          }
+        ],
+        "id": "brand-page-9",
+        "layout": "divider"
+      },
+      {
+        "title": "Logo overview",
+        "summary": "The rounded pocket suggests a contained workspace; the upright sheet signals writing. The blue tab is the only accent. Preserve the supplied SVG geometry across all variants.",
+        "examples": [
+          {
+            "title": "Full signature",
+            "text": "Place the pocket symbol to the left of Notas de Bolsillo for app navigation and project materials."
+          },
+          {
+            "title": "Compact signature",
+            "text": "Use the symbol alone for the favicon and application icon, where the full name is available in surrounding metadata."
+          }
+        ],
+        "id": "brand-page-10",
+        "layout": "logo"
+      },
+      {
+        "title": "Primary logo",
+        "summary": "Set Notas de Bolsillo in IBM Plex Sans 600, natural case and normal tracking. For the standard lockup, pair a 32 px symbol with a 20 px name and a 12 px gap.",
+        "examples": [
+          {
+            "title": "Light surface",
+            "text": "Use the ink name beside the original ink, white and blue symbol on Clear Sheet."
+          },
+          {
+            "title": "Blue header",
+            "text": "Use a white name and place the unchanged symbol on a white support surface. Do not recolor individual symbol parts."
+          }
+        ],
+        "id": "brand-page-11",
+        "layout": "logo"
+      },
+      {
+        "title": "Logo Safezone",
+        "summary": "Define x as one quarter of the symbol's displayed width. Reserve at least x around the complete lockup; the internal symbol-to-name gap remains a separate spacing rule.",
+        "examples": [
+          {
+            "title": "32 px symbol",
+            "text": "Leave at least 8 px clear on every outer edge. Use a 12 px gap before the name."
+          },
+          {
+            "title": "64 px symbol",
+            "text": "Reserve 16 px around the lockup. Keep buttons, borders and the shared descriptor outside this area."
+          }
+        ],
+        "id": "brand-page-12",
+        "layout": "logo"
+      },
+      {
+        "title": "Color combinations",
+        "summary": "Keep the original mark unchanged. On colored applications, use a Clear Sheet support surface with safezone padding. Pair the name with a high-contrast background.",
+        "examples": [
+          {
+            "title": "White application",
+            "text": "Clear Sheet #FFFFFF carries the original symbol and Steady Ink #182B45 name."
+          },
+          {
+            "title": "Blue application",
+            "text": "Selection Blue #2457D6 carries a white name; the complete symbol sits on a white support surface."
+          },
+          {
+            "title": "Ink cover",
+            "text": "Steady Ink #182B45 carries a white name and white symbol support. Keep blue for a small secondary accent."
+          }
+        ],
+        "id": "brand-page-13",
+        "layout": "colors"
+      },
+      {
+        "title": "Brandmark",
+        "summary": "Use the single SVG as the source for every icon size. Preserve the pocket curve, sheet fold and blue tab. Render at 16–32 px for compact UI uses without adding detail.",
+        "examples": [
+          {
+            "title": "16 px favicon",
+            "text": "Center the complete pocket geometry within its square canvas; omit the name and any extra frame."
+          },
+          {
+            "title": "32 px app identity",
+            "text": "Use the same proportions beside Notas de Bolsillo. Do not enlarge the fold or tab independently."
+          }
+        ],
+        "id": "brand-page-14",
+        "layout": "logo"
+      },
+      {
+        "title": "Logo misuse",
+        "summary": "Never stretch, rotate, redraw or typeset inside the symbol. Do not replace the full name with initials. The pocket is an identity mark, not a repeating background texture.",
+        "examples": [
+          {
+            "title": "Incorrect name",
+            "text": "Do not use «NDB», «Notas Bolsillo» or all-capital lettering as the primary signature."
+          },
+          {
+            "title": "Incorrect treatment",
+            "text": "Avoid gradients, shadows, emoji substitutes and a blue symbol directly on a blue field without its white support."
+          }
+        ],
+        "id": "brand-page-15",
+        "layout": "logo"
+      },
+      {
+        "title": "Typography",
+        "summary": "Use IBM Plex Sans throughout. Build recognition with a consistent left edge, restrained weights and readable Spanish copy rather than an additional display face.",
+        "examples": [
+          {
+            "title": "Encuentra tu nota",
+            "text": "Busca por título o por texto."
+          },
+          {
+            "title": "Divider composition",
+            "text": "Set one short heading above a single support line. Leave the rest of the surface open."
+          }
+        ],
+        "id": "brand-page-16",
+        "layout": "divider"
+      },
+      {
+        "title": "Typography overview",
+        "summary": "Keep headings at 28–36 px, body and fields at 16 px, navigation at 16 px and metadata at 13 px. Use ink for small text; Quiet Edge is primarily a border color.",
+        "examples": [
+          {
+            "title": "Tus notas",
+            "text": "Elige una nota para abrirla en la hoja de escritura."
+          },
+          {
+            "title": "Reading rhythm",
+            "text": "Use approximately 1.5 line height for body copy and 1.2 for headings. Keep labels close to their fields."
+          }
+        ],
+        "id": "brand-page-17",
+        "layout": "type"
+      },
+      {
+        "title": "Primary typeface",
+        "summary": "IBM Plex Sans files are supplied for 400, 500, 600 and 700. The app direction uses local WOFF2 with the license retained; use the same family for Spanish labels and note content.",
+        "examples": [
+          {
+            "title": "Una hoja para tus ideas",
+            "text": "Escribe un título y añade texto si lo necesitas."
+          },
+          {
+            "title": "Character specimen",
+            "text": "Título · sesión · búsqueda · última edición · ¿Eliminar esta nota? · 0123456789"
+          }
+        ],
+        "id": "brand-page-18",
+        "layout": "type"
+      },
+      {
+        "title": "Weights & style",
+        "summary": "Use 400 for body and fields, 500 for navigation and controls, and 600 for app headings and the name. Reserve 700 for manual headings; avoid synthetic bold and decorative italics.",
+        "examples": [
+          {
+            "title": "Guardar nota",
+            "text": "Los cambios se guardan cuando pulsas este botón."
+          },
+          {
+            "title": "Weight contrast",
+            "text": "Set «Notas» at 600, «Nueva nota» at 500 and «Texto (opcional)» at 400. Do not bold entire explanatory paragraphs."
+          }
+        ],
+        "id": "brand-page-19",
+        "layout": "type"
+      },
+      {
+        "title": "Supporting type",
+        "summary": "Use IBM Plex Sans 400 for timestamps, help and the shared descriptor. No secondary brand family is needed. Any temporary system sans substitute is a fallback, not the identity typeface.",
+        "examples": [
+          {
+            "title": "Texto (opcional)",
+            "text": "Puedes guardar la nota sólo con un título."
+          },
+          {
+            "title": "Small-copy rule",
+            "text": "Set the shared descriptor at 13 px in ink on light surfaces. Keep it readable but subordinate to navigation and actions."
+          }
+        ],
+        "id": "brand-page-20",
+        "layout": "type"
+      },
+      {
+        "title": "Hierarchy",
+        "summary": "Give each view one page heading and each field a visible label. Prioritize the selected note, its status and Guardar nota in one header; put secondary actions on a separate line.",
+        "examples": [
+          {
+            "title": "Nueva nota",
+            "text": "Cambios sin guardar"
+          },
+          {
+            "title": "Field hierarchy",
+            "text": "Place «Título» before «Texto (opcional)». Use 16 px field text and 13 px supporting messages without weakening contrast."
+          },
+          {
+            "title": "Long titles",
+            "text": "Allow heading and dialog titles to wrap. Never truncate the saved text inside the editor."
+          }
+        ],
+        "id": "brand-page-21",
+        "layout": "type"
+      },
+      {
+        "title": "Layouts",
+        "summary": "Use the 4/8/12/16/24/32/48 px spacing scale. Inicio pairs a narrow summary with wide activity; Notas pairs an index with a top-aligned sheet. Avoid commercial card grids.",
+        "examples": [
+          {
+            "title": "1440 px workspace",
+            "text": "Give Notas a 320 px index and flexible editor. Align their top edges and connect the selected row with one blue tab."
+          },
+          {
+            "title": "768 px workspace",
+            "text": "Use a 248 px index and a 16 px gap. Move secondary editor actions onto their own line."
+          },
+          {
+            "title": "390 px workspace",
+            "text": "Alternate list and editor within /notas. Use 52 px navigation, a 44 px return control and a sticky header that retains its space."
+          }
+        ],
+        "id": "brand-page-22",
+        "layout": "applications"
+      },
+      {
+        "title": "Colors",
+        "summary": "Use a blue-and-gray working desk with a white writing sheet. Ink carries reading; blue carries action and selection. Keep the palette flat and restrained.",
+        "examples": [
+          {
+            "title": "Workspace pairing",
+            "text": "Quiet Desk surrounds Clear Sheet. Steady Ink keeps labels and note content legible across both surfaces."
+          },
+          {
+            "title": "Accent discipline",
+            "text": "Concentrate Selection Blue in the compact header, primary action and connecting tab, rather than every panel."
+          }
+        ],
+        "id": "brand-page-23",
+        "layout": "divider"
+      },
+      {
+        "title": "Colors overview",
+        "summary": "Preserve all five palette values exactly. The muted role is Quiet Edge for boundaries, not a license for low-contrast text. Error is a separate semantic token.",
+        "examples": [
+          {
+            "title": "Background and surface",
+            "text": "Quiet Desk · background #E8EDF3. Clear Sheet · surface #FFFFFF. Use desk around the editor and white for the writing area."
+          },
+          {
+            "title": "Action and reading",
+            "text": "Selection Blue · accent #2457D6. Steady Ink · text #182B45. Use white text on blue primary controls."
+          },
+          {
+            "title": "Boundary and error",
+            "text": "Quiet Edge · muted #77879D for borders. Error #B42318 sits outside the five-color palette; pair it with explicit error text."
+          }
+        ],
+        "id": "brand-page-24",
+        "layout": "colors"
+      },
+      {
+        "title": "Using Tints",
+        "summary": "Use the supplied solid colors rather than creating a tint ladder. Separate regions through white and gray surfaces, spacing and borders. Do not fade essential labels or state messages.",
+        "examples": [
+          {
+            "title": "Selected note",
+            "text": "Use a white row with a blue edge and clear selected semantics, not pale blue text on a tinted background."
+          },
+          {
+            "title": "Pending action",
+            "text": "Keep «Guardando…» readable. A pending control may lose emphasis, but its label must remain distinguishable."
+          }
+        ],
+        "id": "brand-page-25",
+        "layout": "colors"
+      },
+      {
+        "title": "Graphic Elements",
+        "summary": "The blue connecting tab is the sole signature gesture. Move it for 160 ms only after an allowed selection; reduced motion switches immediately. Never animate errors or hide draft replacement.",
+        "examples": [
+          {
+            "title": "Desktop connection",
+            "text": "Bridge the active row's right edge and the sheet's left edge. Other dividers remain quiet and structural."
+          },
+          {
+            "title": "Mobile continuity",
+            "text": "Repeat the blue edge beside the same note's header after switching from list to editor. Keep identity visible during loading and failure."
+          }
+        ],
+        "id": "brand-page-26",
+        "layout": "divider"
+      },
+      {
+        "title": "Icons",
+        "summary": "Use simple, consistent outline UI icons at 20–24 px within targets of at least 44 px. Icons support Spanish labels; the pocket mark remains reserved for identity.",
+        "examples": [
+          {
+            "title": "Fijar nota",
+            "text": "Pair a pin icon with «Fijar nota»; change the label to «Desfijar nota» only for a confirmed pinned state."
+          },
+          {
+            "title": "Eliminar",
+            "text": "Pair the trash icon with visible text in secondary actions. Do not use the pocket mark as a delete or save symbol."
+          },
+          {
+            "title": "Buscar notas",
+            "text": "Use a search icon beside the field, with an accessible label that remains available when the field contains text."
+          }
+        ],
+        "id": "brand-page-27",
+        "layout": "content"
+      },
+      {
+        "title": "Imagery",
+        "summary": "Use no photography or cropped images. Let the desk, index and sheet create the visual story. Editorial mockups may use clearly identified specimen notes, never private user content.",
+        "examples": [
+          {
+            "title": "Empty-state illustration",
+            "text": "Use spacing and the pocket symbol sparingly beside «Todavía no tienes notas». Do not populate the list with decorative notes."
+          },
+          {
+            "title": "Presentation specimen",
+            "text": "A mockup may show «Ideas para el fin de semana» as labeled sample content. The actual visitor's initial list remains empty."
+          }
+        ],
+        "id": "brand-page-28",
+        "layout": "applications"
+      },
+      {
+        "title": "Moodboard",
+        "summary": "Build references from blue desk surfaces, gray dividers, a vertical index and one white sheet. Reject scattered paper, stock photography, sales tiles and notebook ornament.",
+        "examples": [
+          {
+            "title": "Chosen direction",
+            "text": "Index with writing sheet: selection sits immediately beside its content, connected by one blue tab."
+          },
+          {
+            "title": "Material rhythm",
+            "text": "Flat color, crisp borders, 4 px control corners and generous writing space. No paper texture, torn edges or heavy shadows."
+          }
+        ],
+        "id": "brand-page-29",
+        "layout": "applications"
+      },
+      {
+        "title": "Applications",
+        "summary": "Design studies translate the same lockup, left alignment and single blue accent across digital and physical formats. They do not introduce extra app routes, services or commercial offers.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Shared composition",
+            "text": "Lead with one headline, one support line and the pocket signature. Keep functional examples distinct from promotional materials."
+          }
+        ],
+        "id": "brand-page-30",
+        "layout": "divider"
+      },
+      {
+        "title": "Social media icons",
+        "summary": "Design study: center the unchanged pocket mark on white for square or circular profile crops. Keep every corner inside the crop and omit small wordmark text.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "Un índice y una hoja de escritura."
+          },
+          {
+            "title": "Avatar scale",
+            "text": "Use the symbol at about 64% of the canvas width. Keep the remaining white area clear; add no initials, badges or status dots."
+          }
+        ],
+        "id": "brand-page-31",
+        "layout": "logo"
+      },
+      {
+        "title": "Social media profiles",
+        "summary": "Design study: use the exact name as the display name and the shared descriptor as the bio. A blue banner may carry a white sheet composition; do not invent handles or account claims.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Profile banner",
+            "text": "Set «Índice y hoja» on the left, with a simple white panel on the right. Avoid fake statistics, testimonials or user-note screenshots."
+          }
+        ],
+        "id": "brand-page-32",
+        "layout": "applications"
+      },
+      {
+        "title": "Instagram posts",
+        "summary": "Design study: use one message per square, with a 48 px inset on a 1080 px canvas. Pair a large ink headline with a white sheet and a single blue edge.",
+        "examples": [
+          {
+            "title": "Un título para empezar",
+            "text": "El texto es opcional. El título ayuda a encontrar tu nota."
+          },
+          {
+            "title": "Guardar es una acción",
+            "text": "Pulsa «Guardar nota» cuando quieras enviar tus cambios."
+          },
+          {
+            "title": "Post discipline",
+            "text": "Show only labeled specimen content. Do not turn note counts or saved states into promotional proof."
+          }
+        ],
+        "id": "brand-page-33",
+        "layout": "applications"
+      },
+      {
+        "title": "Posters",
+        "summary": "Design study: use an A3 portrait sheet with a 24 mm margin, one left-aligned headline and a small bottom lockup. Keep the poster descriptive, without a fabricated URL or launch claim.",
+        "examples": [
+          {
+            "title": "Encuentra. Escribe. Guarda.",
+            "text": "Notas de Bolsillo · Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Poster hierarchy",
+            "text": "Let the headline dominate. Place a small blue tab on the edge of one white panel; omit feature grids and oversized action buttons."
+          }
+        ],
+        "id": "brand-page-34",
+        "layout": "applications"
+      },
+      {
+        "title": "T shirts and totes",
+        "summary": "Design study: place a compact lockup on white fabric with ample clear space. Preserve ink and blue as flat colors; this is a project graphic, not a merchandise offer.",
+        "examples": [
+          {
+            "title": "Ideas de bolsillo",
+            "text": "Notas de Bolsillo"
+          },
+          {
+            "title": "Placement",
+            "text": "Use a small chest signature on a T shirt or one centered lockup on a tote. Avoid repeating the pocket symbol as an all-over pattern."
+          }
+        ],
+        "id": "brand-page-35",
+        "layout": "applications"
+      },
+      {
+        "title": "Paper sleeve",
+        "summary": "Design study: adapt the packaging format as a sleeve for blank project stationery. Use a white front, ink name and one blue edge; imply neither a physical product nor an app export feature.",
+        "examples": [
+          {
+            "title": "Una hoja para empezar",
+            "text": "Notas de Bolsillo · Material de presentación"
+          },
+          {
+            "title": "Sleeve composition",
+            "text": "Keep the pocket mark above the name and leave the center open. Use the blue edge once, not as a ribbon around every side."
+          }
+        ],
+        "id": "brand-page-36",
+        "layout": "applications"
+      },
+      {
+        "title": "Workspace entry",
+        "summary": "Design study: replace pickup wayfinding with clear arrival into the private workspace. Inicio is the entry point, and its real empty state leads to note creation without onboarding cards.",
+        "examples": [
+          {
+            "title": "Todavía no tienes notas",
+            "text": "Crea tu primera nota para empezar."
+          },
+          {
+            "title": "Entry action",
+            "text": "«Crear mi primera nota» opens /notas?nueva=1. Show zero totals only after the session's empty summary is confirmed."
+          }
+        ],
+        "id": "brand-page-37",
+        "layout": "applications"
+      },
+      {
+        "title": "Note controls",
+        "summary": "Design study: style shadcn controls with 4 px corners, visible focus and 44 px targets. Blue marks the primary action; pinning and deletion stay secondary. Preserve semantic accessible behavior.",
+        "examples": [
+          {
+            "title": "Guardar nota",
+            "text": "Escribe un título para guardar la nota."
+          },
+          {
+            "title": "Validation",
+            "text": "Keep Guardar nota activable with invalid fields. Show linked errors, associate them with Título and focus the first invalid field."
+          },
+          {
+            "title": "Delete confirmation",
+            "text": "Use «¿Eliminar esta nota?» with the full title and «Esta acción no se puede deshacer». Place initial focus on «Cancelar»."
+          }
+        ],
+        "id": "brand-page-38",
+        "layout": "applications"
+      },
+      {
+        "title": "Save confirmation",
+        "summary": "Design study: replace a receipt with status in the existing editor header. Show Guardado and a server-provided time only after confirmation; never add a separate success card.",
+        "examples": [
+          {
+            "title": "Resultado incierto",
+            "text": "No sabemos si se completó el guardado. Recupera el envío original antes de volver a enviarlo."
+          },
+          {
+            "title": "State sequence",
+            "text": "Use «Cambios sin guardar», «Guardando…» and «Guardado» distinctly. Later edits remain unsaved even if an earlier submission succeeds."
+          },
+          {
+            "title": "Recovery layout",
+            "text": "Let errors expand in normal flow below the status. Keep the selected identity and editable content visible."
+          }
+        ],
+        "id": "brand-page-39",
+        "layout": "applications"
+      },
+      {
+        "title": "Pinning reference card",
+        "summary": "Design study: adapt the return-card format as a small guide to finding notes again. It is a reference item, not a rewards scheme, membership card or additional app feature.",
+        "examples": [
+          {
+            "title": "Vuelve a lo importante",
+            "text": "Fija una nota para situarla al principio del índice."
+          },
+          {
+            "title": "Card layout",
+            "text": "Place a pin icon beside the headline and a small pocket signature below. Do not use points, stamps, tiers or progress counters."
+          }
+        ],
+        "id": "brand-page-40",
+        "layout": "applications"
+      },
+      {
+        "title": "Workspace sign",
+        "summary": "Design study: use a simple project display sign, not a claimed venue. Place the full white name on blue with the symbol on white support; keep the descriptor secondary.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Sign hierarchy",
+            "text": "Use one horizontal lockup with generous margins. Add no address, opening hours, directional arrows or service claims."
+          }
+        ],
+        "id": "brand-page-41",
+        "layout": "applications"
+      },
+      {
+        "title": "Notes website",
+        "summary": "Design study: keep exactly two UI routes, / and /notas. Inicio presents session totals and recent activity; Notas presents search, index and editor. Notes require real Turso persistence, not a mock fallback.",
+        "examples": [
+          {
+            "title": "Tus notas, de un vistazo",
+            "text": "Nueva nota · Ver todas las notas"
+          },
+          {
+            "title": "Navigation and selection",
+            "text": "Nueva nota opens /notas?nueva=1; recent rows use /notas?nota=<id>. Mark Inicio or Notas with aria-current and protect unsaved drafts."
+          },
+          {
+            "title": "Search and failure",
+            "text": "Distinguish «No hay resultados» from zero notes and loading. Offer «Limpiar búsqueda» or «Reintentar» without replacing the current draft."
+          }
+        ],
+        "id": "brand-page-42",
+        "layout": "applications"
+      },
+      {
+        "title": "Favicon",
+        "summary": "Design study: derive app/icon.svg and raster application icons from the same pocket geometry. Use a white canvas for contrast and keep the full name in titles, not inside the tiny symbol.",
+        "examples": [
+          {
+            "title": "Inicio | Notas de Bolsillo",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Notas | Notas de Bolsillo",
+            "text": "Lista y editor de notas de tu sesión."
+          },
+          {
+            "title": "Small-size composition",
+            "text": "Use the complete symbol at 16 and 32 px. Preserve the original canvas proportions and omit extra lettering or decorative borders."
+          }
+        ],
+        "id": "brand-page-43",
+        "layout": "logo"
+      },
+      {
+        "title": "Stationery",
+        "summary": "Design study: use an A4 white page with 20 mm margins, a compact upper-left lockup and a quiet footer. Align headings and body to one shared left edge.",
+        "examples": [
+          {
+            "title": "Notas del proyecto",
+            "text": "Notas de Bolsillo · Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Writing area",
+            "text": "Keep most of the page blank. Use one blue edge near the heading; avoid watermarks beneath text or ruled notebook decoration."
+          }
+        ],
+        "id": "brand-page-44",
+        "layout": "applications"
+      },
+      {
+        "title": "Project cards",
+        "summary": "Design study: adapt business cards as project introduction cards. Use the name and descriptor without inventing job titles, contact details, addresses or a published domain.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Two-sided composition",
+            "text": "Front: full lockup on white. Back: «Índice y hoja» in white on blue, with no QR code or unverified destination."
+          }
+        ],
+        "id": "brand-page-45",
+        "layout": "applications"
+      },
+      {
+        "title": "Note prompt card",
+        "summary": "Design study: replace a gift-card format with a writing prompt. Use a white writing area and blue edge; add no value, redemption code, entitlement or commerce action.",
+        "examples": [
+          {
+            "title": "¿Qué quieres recordar?",
+            "text": "Empieza por un título. Añade texto si lo necesitas."
+          },
+          {
+            "title": "Prompt hierarchy",
+            "text": "Place the prompt above a generous blank area and a small Notas de Bolsillo signature. Keep the format distinct from an app input screen."
+          }
+        ],
+        "id": "brand-page-46",
+        "layout": "applications"
+      },
+      {
+        "title": "Stationery seal",
+        "summary": "Design study: use the unchanged pocket symbol on a white circular label for presentation stationery. Leave its safezone intact and avoid suggesting security, certification or a product guarantee.",
+        "examples": [
+          {
+            "title": "Una hoja, una idea",
+            "text": "Notas de Bolsillo · Material de presentación"
+          },
+          {
+            "title": "Seal composition",
+            "text": "Center the symbol without curved text or extra outlines. Place any descriptor beside the seal rather than shrinking it around the perimeter."
+          }
+        ],
+        "id": "brand-page-47",
+        "layout": "applications"
+      },
+      {
+        "title": "User support",
+        "summary": "Design study: keep recovery inside the affected view rather than adding a support route. State the problem, preserve the draft and offer a specific next action without promising lost-session recovery.",
+        "examples": [
+          {
+            "title": "No podemos acceder a esta sesión",
+            "text": "Reintenta. Si empiezas una sesión vacía, tus notas anteriores no aparecerán en ella."
+          },
+          {
+            "title": "Esta nota cambió",
+            "text": "Compara tu borrador con los valores actuales antes de cargar otra versión o sobrescribirla."
+          },
+          {
+            "title": "No se puede abrir esta nota",
+            "text": "Vuelve a la lista para elegir una nota. No abriremos otra automáticamente."
+          }
+        ],
+        "id": "brand-page-48",
+        "layout": "applications"
+      },
+      {
+        "title": "Thank you",
+        "summary": "This guide presents an original identity proposed for this project, with examples of its visual and editorial use.",
+        "examples": [
+          {
+            "title": "Notas de Bolsillo",
+            "text": "Una app ficticia de Esteban para probar Constructor"
+          },
+          {
+            "title": "Source list",
+            "text": "Supplied project plan and identity direction; supplied IBM Plex Sans font resources, weights 400–700. No external business or visual identity sources."
+          },
+          {
+            "title": "Public description study",
+            "text": "GET /api/info contains only name: «Notas de Bolsillo» and description: «Una app ficticia de Esteban para probar Constructor»; no private notes or session creation."
+          }
+        ],
+        "id": "brand-page-49",
+        "layout": "cover"
+      }
+    ]
+  }
+}

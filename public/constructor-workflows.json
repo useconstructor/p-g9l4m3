@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "workflows": [
+    {
+      "id": "info",
+      "name": "Información pública",
+      "description": "Nombre y descripción de la aplicación.",
+      "endpoint": "/api/info",
+      "method": "GET",
+      "input": {}
+    },
+    {
+      "id": "iniciar_sesion",
+      "name": "Iniciar sesión privada",
+      "description": "Establecer o comprobar la sesión anónima actual.",
+      "endpoint": "/api/session",
+      "method": "POST",
+      "input": {}
+    },
+    {
+      "id": "resumen",
+      "name": "Resumen de tus notas",
+      "description": "Consultar totales y actividad de la sesión actual.",
+      "endpoint": "/api/resumen",
+      "method": "GET",
+      "input": {}
+    },
+    {
+      "id": "listar_notas",
+      "name": "Listar tus notas",
+      "description": "Consultar las notas de la sesión actual.",
+      "endpoint": "/api/notas",
+      "method": "GET",
+      "input": {}
+    }
+  ]
+}
