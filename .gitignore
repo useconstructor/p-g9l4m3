@@ -56,3 +56,9 @@ AGENTS.md
 skills-lock.json
 node_modules
 .next
+
+# Product icons are deployment assets, not QA screenshots.
+!public/icon-32.png
+!public/icon-180.png
+!public/icon-192.png
+!public/icon-512.png
