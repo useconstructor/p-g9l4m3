@@ -34,7 +34,7 @@ export function NotesProvider({ children }: { children: ReactNode }) {
   const initialize = useCallback((action: 'normal' | 'restart' | 'manual' = 'normal') => {
     if (working.current) return working.current;
     setLoading(true); setError('');
-    const run = async () => {
+    const run = async (allowInitialize: boolean) => {
       const scope = markerScope();
       const marker = scope ? `notas-de-bolsillo:sesion:${scope}` : null;
       let expected = false, legacy = false;
@@ -45,7 +45,7 @@ export function NotesProvider({ children }: { children: ReactNode }) {
         try { established = await request('/api/session', { action: 'verify' }); }
         catch (e) {
           if (!(e instanceof ApiError) || e.status !== 401) throw e;
-          if (expected || legacy || !scope || readyRef.current) throw new Error('No podemos acceder a esta sesión. Reintenta antes de empezar una sesión vacía.');
+          if (!allowInitialize || expected || legacy || !scope || readyRef.current) throw new Error('No podemos acceder a esta sesión. Reintenta antes de empezar una sesión vacía.');
           established = await request('/api/session', { action: 'initialize' });
         }
       }
@@ -56,9 +56,9 @@ export function NotesProvider({ children }: { children: ReactNode }) {
     };
     working.current = Promise.resolve().then(async () => {
       try {
-        if (navigator.locks) await navigator.locks.request('notas-de-bolsillo:session', run);
-        else if (action === 'manual' || action === 'restart') await run();
-        else throw new Error('Este navegador no permite coordinar la sesión entre pestañas. Cierra las otras vistas de esta app y continúa en una sola pestaña.');
+        if (navigator.locks) await navigator.locks.request('notas-de-bolsillo:session', () => run(true));
+        else if (action === 'manual') await run(false);
+        else throw new Error('Este navegador no permite coordinar una sesión nueva. Reintenta para comprobar una sesión existente o abre la app en un navegador compatible antes de empezar una sesión vacía.');
       } catch (e) { readyRef.current = false; setReady(false); setError(e instanceof Error ? e.message : 'No podemos acceder a esta sesión'); }
       finally { setLoading(false); working.current = null; }
     });
