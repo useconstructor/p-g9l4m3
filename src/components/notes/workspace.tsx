@@ -27,6 +27,7 @@ export function NotesWorkspace() {
   const toolbarRef = useRef<HTMLDivElement>(null), titleInput = useRef<HTMLInputElement>(null), indexHeading = useRef<HTMLHeadingElement>(null), editorHeading = useRef<HTMLHeadingElement>(null), deleteTrigger = useRef<HTMLButtonElement>(null), listRef = useRef<HTMLDivElement>(null);
   const currentDraft = useRef(draft), baselineRef = useRef(baseline), busy = useRef(false), selectionRef = useRef(selection), appliedSelection = useRef<string | null>(null), focusList = useRef(false), afterDelete = useRef(false), focusEditor = useRef(false), listPosition = useRef(0), pagePosition = useRef(0), viewReady = useRef(false);
   const workspaceRef = useRef<HTMLDivElement>(null);
+  const pinTrigger = useRef<HTMLButtonElement>(null), pinFocus = useRef<{ selection: string; session: string } | null>(null);
   const tabRef = useRef<HTMLSpanElement>(null), tabAnimation = useRef<Animation | null>(null), tabPrevious = useRef<number | null>(null), tabSelection = useRef<string | null>(null);
   useLayoutEffect(() => { currentDraft.current = draft; baselineRef.current = baseline; selectionRef.current = selection; }, [draft, baseline, selection]);
   const dirty = (selection === 'new' || !!baseline) && (baseline ? !sameDraft(draft, baseline) : draft.titulo !== '' || draft.texto !== '');
@@ -95,7 +96,8 @@ export function NotesWorkspace() {
       if (!active) { tabAnimation.current?.cancel(); tab.style.visibility = 'hidden'; return; }
       const mobile = window.matchMedia('(max-width:640px)').matches;
       if (mobile && !mobileEditor && tabSelection.current && tabSelection.current !== noteId) return;
-      const origin = workspace.getBoundingClientRect(), row = active.getBoundingClientRect();
+      const origin = workspace.getBoundingClientRect(), row = active.getBoundingClientRect(), bounds = list.getBoundingClientRect();
+      if (!(mobile && mobileEditor) && (row.bottom <= bounds.top || row.top >= bounds.bottom)) { tab.style.visibility = 'hidden'; return; }
       const next = mobile && mobileEditor ? 60 : row.top - origin.top + Math.min(row.height / 2, 32) - 12;
       const x = mobile ? mobileEditor ? 0 : row.right - origin.left - 3 : row.right - origin.left - 6;
       const previous = tabPrevious.current, previousSelection = tabSelection.current;
@@ -110,7 +112,12 @@ export function NotesWorkspace() {
     measure();
     const resize = new ResizeObserver(() => { if (tabAnimation.current?.playState !== 'running') measure(); });
     resize.observe(list);
-    return () => resize.disconnect();
+    let frame = 0;
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(() => { frame = 0; measure(); }); };
+    list.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    return () => { resize.disconnect(); cancelAnimationFrame(frame); list.removeEventListener('scroll', schedule); window.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); };
   }, [index, noteId, mobileEditor]);
   useEffect(() => () => tabAnimation.current?.cancel(), []);
   useLayoutEffect(() => {
@@ -135,7 +142,7 @@ export function NotesWorkspace() {
     return () => window.removeEventListener('scroll', record);
   }, [mobileEditor, query, noteId]);
   useLayoutEffect(() => { if (!mobileEditor && !indexLoading && window.matchMedia('(max-width:640px)').matches) window.scrollTo({ top: pagePosition.current, behavior: 'instant' }); }, [mobileEditor, indexLoading]);
-  const returnToList = () => { listPosition.current = listRef.current?.scrollTop ?? listPosition.current; focusList.current = true; setMobileEditor(false); };
+  const returnToList = () => { const list = listRef.current; if (list?.getClientRects().length) listPosition.current = list.scrollTop; focusList.current = true; setMobileEditor(false); };
   const runEnvelope = async (envelope: Envelope) => {
     if (busy.current || !ready || envelope.session_ref !== sessionRef) return;
     const startedSelection = selectionRef.current;
@@ -181,8 +188,18 @@ export function NotesWorkspace() {
     void runEnvelope(envelope);
   };
   const startAnother = () => confirm({ title: '¿Iniciar otro envío?', body: 'El envío anterior podría haberse guardado. Un nuevo envío puede crear otra nota o entrar en conflicto. Conservaremos el envío original para que puedas recuperarlo.', action: 'Iniciar otro envío', run: () => save(undefined, true) });
+  useLayoutEffect(() => {
+    if (pending || !pinFocus.current) return;
+    const owner = pinFocus.current; pinFocus.current = null;
+    const button = pinTrigger.current;
+    if (owner.selection === selection && owner.session === sessionRef && button && !button.disabled
+      && (document.activeElement === document.body || document.activeElement === button)) {
+      button.focus({ preventScroll: true });
+    }
+  }, [pending, baseline, selection, sessionRef]);
   const pinNote = () => {
     if (!baseline || !sessionRef || uncertain || pending) return;
+    pinFocus.current = document.activeElement === pinTrigger.current ? { selection, session: sessionRef } : null;
     void runEnvelope({ session_ref: sessionRef, endpoint: `/api/notas/${baseline.id}/fijar`, body: { mutation_key: crypto.randomUUID(), expected_revision: baseline.revision, fijada: !baseline.fijada }, baseline });
   };
   const deleteNote = () => {
@@ -195,7 +212,7 @@ export function NotesWorkspace() {
     <div className="notes-workspace" ref={workspaceRef}>
       <aside className="note-index paper" aria-labelledby="indice-titulo">
         <div className="index-header"><h2 id="indice-titulo" ref={indexHeading} tabIndex={-1}>Tus notas <span>{index && ready ? index.total : '—'}</span></h2><a className="control primary index-new" href="/notas?nueva=1"><SquarePen/>Nueva nota</a><label htmlFor="buscar-notas" className="search-label">Buscar notas</label><div className="search-field"><Search size={19}/><Input id="buscar-notas" value={query} placeholder="Por título o texto" onChange={e => setQuery(e.target.value)}/>{query && <button className="clear-search" aria-label="Limpiar búsqueda" onClick={() => setQuery('')}><X size={17}/></button>}</div></div>
-        <div className="index-list" ref={listRef} aria-busy={indexLoading} onScroll={e => { listPosition.current = e.currentTarget.scrollTop; try { sessionStorage.setItem(contextKey,JSON.stringify({ query,scroll:listPosition.current,selection:noteId })); } catch {} }}>
+        <div className="index-list" ref={listRef} aria-busy={indexLoading} onScroll={e => { if (mobileEditor && window.matchMedia('(max-width:640px)').matches) return; listPosition.current = e.currentTarget.scrollTop; try { sessionStorage.setItem(contextKey,JSON.stringify({ query,scroll:listPosition.current,selection:noteId })); } catch {} }}>
           {indexLoading && !index ? <div className="index-state" role="status"><LoaderCircle className="spinner"/><p>Cargando tus notas…</p></div> : indexError || !ready ? <div className="index-state" role="alert"><CircleAlert/><h3>{!ready && !sessionLoading ? 'No podemos acceder a esta sesión' : indexError || 'Preparando tu sesión…'}</h3>{ready && <Button className="control secondary" onClick={() => setIndexRetry(n => n+1)}><RefreshCw/>Reintentar</Button>}</div> : index?.total === 0 ? <div className="index-state"><FileText/><h3>Todavía no tienes notas</h3><p>Tu primera idea empieza con una nota.</p><a href="/notas?nueva=1" className="text-link">Crear mi primera nota <ArrowRight/></a></div> : index?.coincidencias === 0 ? <div className="index-state"><Search/><h3>No hay resultados</h3><p>Prueba con otras palabras.</p><Button className="control secondary" onClick={() => setQuery('')}>Limpiar búsqueda</Button></div> : <>{indexLoading && <p role="status" className="search-status">Buscando…</p>}{index?.notas.map(note => <a key={note.id} data-note-id={note.id} href={`/notas?nota=${note.id}`} className={`index-row ${noteId === note.id ? 'selected' : ''}`} aria-current={noteId === note.id ? 'true' : undefined} onClick={e => { if (noteId === note.id) { e.preventDefault(); setMobileEditor(true); focusEditor.current = true; } }}><div className="index-row-title"><h3>{note.titulo}</h3>{note.fijada ? <Pin size={16} aria-label="Fijada"/> : <ChevronRight size={16}/>}</div><p>{excerpt(note.texto) || 'Sin texto'}</p><time dateTime={note.updated_at}>{dateLabel(note.updated_at)}</time></a>)}</>}
 
         </div>
@@ -207,7 +224,7 @@ export function NotesWorkspace() {
         {!ready ? <div className="sheet-placeholder"><NotebookPen size={44}/><h2>{sessionLoading ? 'Preparando tu espacio…' : 'No podemos acceder a esta sesión'}</h2><p>{sessionLoading ? 'Estamos comprobando tu sesión privada.' : 'Reintenta para volver a tus notas.'}</p></div> : detailLoading || awaitingSelection ? <div className="sheet-placeholder" role="status"><LoaderCircle className="spinner"/><h2>Cargando esta nota…</h2><p>Conservamos tu selección.</p></div> : detailError ? <div className="sheet-placeholder" role="alert"><CircleAlert size={36}/><h2>{detailError}</h2><p>Vuelve a la lista para elegir una nota. No abriremos otra automáticamente.</p><div className="button-row"><a className="control secondary" href="/notas">Volver a la lista</a>{!invalidReference && <Button className="control secondary" onClick={() => { appliedSelection.current = null; setDetailRetry(n => n+1); }}><RefreshCw/>Reintentar</Button>}</div></div> : selection === 'none' ? <div className="sheet-placeholder"><div className="empty-icon"><NotebookPen size={44} strokeWidth={1.4}/></div><h2>Una hoja para tus ideas</h2><p>Elige una nota del índice o empieza una nueva.</p><a className="control primary" href="/notas?nueva=1"><SquarePen/>Nueva nota</a><span className="sheet-footnote">Escribe. Guarda. Vuelve cuando lo necesites.</span></div> : <form id="note-form" noValidate onSubmit={event => { event.preventDefault(); save(); }}>
           <div ref={toolbarRef} className="editor-toolbar"><div className="editor-identity"><NoteHeading title={baseline ? baseline.titulo : 'Nueva nota'} headingRef={editorHeading} onExpand={() => setFullTitle(value => !value)} expanded={fullTitle}/><p className={`save-status ${uncertain && !pending ? 'uncertain-status' : ''}`} role="status" aria-live="polite">{pending ? <LoaderCircle className="spinner"/> : uncertain ? <CircleAlert/> : dirty || !baseline || conflict || message || titleError ? <span className="status-dot"/> : <Check/>}{stateLabel}</p></div><Button className="control primary save-button" type="submit" disabled={pending || !ready}><Save/>{pending ? 'Guardando…' : 'Guardar nota'}</Button></div>
           {fullTitle && <p className="full-note-title" id="titulo-completo">{baseline?.titulo}</p>}
-          {baseline && <div className="editor-secondary"><div className="button-row"><Button className="control text-button" disabled={pending || uncertain} onClick={pinNote}>{baseline.fijada ? <PinOff/> : <Pin/>}{baseline.fijada ? 'Desfijar nota' : 'Fijar nota'}</Button><Button ref={deleteTrigger} className="control delete-button" disabled={pending || uncertain} onClick={() => { setDeleteError(''); setDeleteOpen(true); }}><Trash2/>Eliminar</Button></div></div>}
+          {baseline && <div className="editor-secondary"><div className="button-row"><Button ref={pinTrigger} className="control text-button" disabled={pending || uncertain} onClick={pinNote}>{baseline.fijada ? <PinOff/> : <Pin/>}{baseline.fijada ? 'Desfijar nota' : 'Fijar nota'}</Button><Button ref={deleteTrigger} className="control delete-button" disabled={pending || uncertain} onClick={() => { setDeleteError(''); setDeleteOpen(true); }}><Trash2/>Eliminar</Button></div></div>}
           {(titleError || (message && !uncertain)) && <div className="editor-feedback" role="alert">{titleError ? <><strong>Revisa el título de la nota</strong><a href="#titulo-nota" onClick={e => { e.preventDefault(); focusTitle(); }}>{titleError}</a></> : <p>{message}</p>}</div>}
           {!pending && relevantEnvelopes.map(envelope => <div className="recovery-block editor-feedback" role="alert" key={String(envelope.body.mutation_key)}><div className="recovery-heading"><CircleAlert/><h3>Resultado incierto</h3></div><p>No sabemos si se completó el envío. Conservamos los valores enviados y tu borrador. Recupera el envío original para comprobarlo sin repetir el cambio.</p><details><summary>Ver valores enviados</summary><strong>{String(envelope.body.titulo ?? envelope.baseline?.titulo ?? '')}</strong><pre>{String(envelope.body.texto ?? envelope.baseline?.texto ?? '')}</pre></details><div className="button-row"><Button className="control secondary" disabled={pending} onClick={() => void runEnvelope(envelope)}><RefreshCw/>Recuperar envío original</Button>{!envelope.endpoint.endsWith('/eliminar') && <Button className="control text-button" disabled={pending} onClick={startAnother}>Iniciar otro envío</Button>}</div></div>)}
           {conflict && <div className="conflict-block" role="alert"><h3>Esta nota cambió</h3><p>Compara las versiones antes de decidir cómo continuar.</p><div className="version-grid"><Version label="Tu borrador" value={draft}/><Version label="Última confirmación" value={conflict.previous}/><Version label="Valores actuales" value={conflict.current}/></div><div className="button-row"><Button className="control secondary" onClick={() => setConflict(null)}>Conservar borrador</Button><Button className="control secondary" onClick={() => { setBaseline(conflict.current); setDraft({titulo:conflict.current.titulo,texto:conflict.current.texto}); setConflict(null); setMessage(''); }}>Cargar valores actuales</Button><Button className="control primary" onClick={() => save(conflict.current)}>Sobrescribir con mi borrador</Button></div></div>}
