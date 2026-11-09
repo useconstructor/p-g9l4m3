@@ -361,7 +361,7 @@ strong { font-weight:600; }
   --brand-background: #E8EDF3 !important;
   --brand-surface: #FFFFFF !important;
   --brand-primary: #6D28D9 !important;
-  --brand-accent: #0F766E !important;
+  --brand-accent: #6D28D9 !important;
   --brand-text: #182B45 !important;
   --brand-font-heading: "IBM Plex Sans", sans-serif !important;
   --brand-font-body: "IBM Plex Sans", sans-serif !important;
@@ -384,7 +384,7 @@ strong { font-weight:600; }
   --foreground: oklch(0.2868 0.0542 256.56);
   --card-foreground: oklch(0.2868 0.0542 256.56);
   --primary: oklch(0.4907 0.2412 292.58);
-  --accent: oklch(0.5109 0.0861 186.39);
+  --accent: oklch(0.4907 0.2412 292.58);
   --radius: 0.25rem;
 }
 h1, h2, h3, h4, h5, h6 { font-family: var(--brand-font-heading) !important; }
