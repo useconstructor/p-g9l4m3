@@ -20,7 +20,7 @@
     {
       "id": "resumen",
       "name": "Resumen de tus notas",
-      "description": "Consultar totales y actividad de la sesión actual.",
+      "description": "Consultar el total de notas y su actividad en esta sesión privada.",
       "endpoint": "/api/resumen",
       "method": "GET",
       "input": {}

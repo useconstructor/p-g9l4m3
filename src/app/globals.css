@@ -351,3 +351,46 @@ strong { font-weight:600; }
 .editor-toolbar.toolbar-static { position:relative; top:auto; }
 .editor-fields input,.editor-fields textarea { scroll-margin-top:calc(var(--header-height) + var(--working-header-height, 88px) + 20px); }
 @media (max-width:640px) { .header-new { min-height:44px; } .brand-link { min-height:44px; display:flex; align-items:center; } }
+
+/* __branding-overrides-start__ */
+@font-face { font-family:"IBM Plex Sans"; src:url("https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6llzAA.ttf"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:"IBM Plex Sans"; src:url("https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlzAA.ttf"); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:"IBM Plex Sans"; src:url("https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf"); font-weight:600; font-style:normal; font-display:swap; }
+@font-face { font-family:"IBM Plex Sans"; src:url("https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDDV5zAA.ttf"); font-weight:700; font-style:normal; font-display:swap; }
+:root {
+  --brand-background: #E8EDF3 !important;
+  --brand-surface: #FFFFFF !important;
+  --brand-primary: #6D28D9 !important;
+  --brand-accent: #6D28D9 !important;
+  --brand-text: #182B45 !important;
+  --brand-font-heading: "IBM Plex Sans", sans-serif !important;
+  --brand-font-body: "IBM Plex Sans", sans-serif !important;
+  --color-background: oklch(0.9440 0.0097 252.81);
+  --color-foreground: oklch(0.2868 0.0542 256.56);
+  --color-card-foreground: oklch(0.2868 0.0542 256.56);
+  --color-popover-foreground: oklch(0.2868 0.0542 256.56);
+  --color-primary-foreground: oklch(0.2868 0.0542 256.56);
+  --color-secondary-foreground: oklch(0.2868 0.0542 256.56);
+  --color-muted-foreground: oklch(0.2868 0.0542 256.56);
+  --color-accent-foreground: oklch(0.2868 0.0542 256.56);
+  --brand-radius: 0.25rem !important;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.25rem;
+  --background: oklch(0.9440 0.0097 252.81);
+  --card: oklch(0.9440 0.0097 252.81);
+  --popover: oklch(0.9440 0.0097 252.81);
+  --foreground: oklch(0.2868 0.0542 256.56);
+  --card-foreground: oklch(0.2868 0.0542 256.56);
+  --primary: oklch(0.4907 0.2412 292.58);
+  --accent: oklch(0.4907 0.2412 292.58);
+  --radius: 0.25rem;
+}
+h1, h2, h3, h4, h5, h6 { font-family: var(--brand-font-heading) !important; }
+body {
+  background: #E8EDF3 !important;
+  color: #182B45 !important;
+  font-family: var(--brand-font-body) !important;
+}
+/* __branding-overrides-end__ */
